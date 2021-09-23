@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <div id="box">
+        Nome <input type="text" name="nome" id="nome"> <br />
+        Insira seu peso <input id="peso" type="number"> <br />
+        Insira sua altura <input id="altura" type="number"> <br />
+        <button id="botao" onclick= "calculo()">Calcular IMC</button>
+    </div>
+    <script>
+        box.style.border = "solid 2px #1c4485";
+        box.style.width = "300px";
+        box.style.margin = "auto";
+        box.style.height = "400px";
+        box.style.borderRadius = "12px"
+        box.style.backgroundColor = "#97b6e8"
+        box.style.display = "flex";
+        box.style.flexDirection = "Column";
+        box.style.fontSize = "20px"
+        box.style.color = "#222c6b"
+
+        botao.style.width = "100px";
+        botao.style.height = "40px";
+        botao.style.fontSize = "16px";
+        botao.style.fontWeight = "600"
+        botao.style.backgroundColor = "#5b7db5";
+        botao.style.border = "solid 2px #1c4485";
+        botao.style.borderRadius = "4px";
+        botao.style.color = "#364f78";
+        botao.style.margin = "auto";
+
+        function calculo() {
+
+            let nome = document.getElementById("nome");
+            let botao = document.querySelector(".botao");
+            let peso = parseFloat(document.getElementById('peso').value);
+            let altura = parseFloat(document.getElementById('altura').value);
+            
+            let imc = peso / (altura * altura);
+
+        if (imc < 17) {
+            box.innerHTML = `<p> ${nome.value} você está muito abaixo do peso. Seu IMC é ${imc.toFixed(2)} </p>`;
+
+        } else if (imc > 17 && imc <= 18.49){
+            box.innerHTML = `<p> ${nome.value} você está abaixo do peso. Seu IMC é ${imc.toFixed(2)} </p>`;
+
+        } else if (imc >= 18.5 && imc <= 24.99){
+            box.innerHTML = `<p> ${nome.value} você está no peso normal. Seu IMC é ${imc.toFixed(2)} </p>`;
+
+        } else if (imc >= 25 && imc <= 29.99){
+            box.innerHTML = `<p> ${nome.value} você está acima do peso. Seu IMC é ${imc.toFixed(2)} </p>`;
+
+        } else if (imc >= 30 && imc <= 34.99){
+            box.innerHTML = `<p> ${nome.value} você está com obesidade grau I. Seu IMC é ${imc.toFixed(2)} </p>`;
+
+        } else {
+            box.innerHTML = `<p> ${nome.value} você está com obesidade grau II. Seu IMC é ${imc.toFixed(2)} </p>`;
+        }
+        }
+    </script>
+</body>
+</html>

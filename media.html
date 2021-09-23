@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Média Escolar</title> 
+</head>
+<body>
+    <div id="box">
+        Nome <input type="text" name="nome" id="nome"> <br />
+        1º nota <input id="nota1" type="number"> <br />
+        2º nota <input id="nota2" type="number"> <br />
+        3° nota <input id="nota3" type="number"> <br />
+        4° nota <input id="nota4" type="number"> <br />
+        <button id="botao" onclick="media()">Calcular Media</button>
+    </div>
+ 
+    <script>
+
+        box.style.border = "solid 2px #1c4485";
+        box.style.width = "300px";
+        box.style.margin = "auto";
+        box.style.height = "400px";
+        box.style.borderRadius = "12px"
+        box.style.backgroundColor = "#97b6e8"
+        box.style.display = "flex";
+        box.style.flexDirection = "Column";
+        box.style.fontSize = "20px"
+        box.style.color = "#222c6b"
+
+        nota1.style.border = "solid 2px #1c4485";
+        nota1.style.borderRadius = "12px";
+        nota1.style.width = "150px";
+        nota1.style.height = "25px";
+        nota1.style.margin = "auto";
+
+
+        nota2.style.border = "solid 2px #1c4485";
+        nota2.style.borderRadius = "12px";
+        nota2.style.width = "150px";
+        nota2.style.height = "25px";
+        nota2.style.margin = "auto";
+
+        nota3.style.border = "solid 2px #1c4485";
+        nota3.style.borderRadius = "12px";
+        nota3.style.width = "150px";
+        nota3.style.height = "25px";
+        nota3.style.margin = "auto";
+
+        nota4.style.border = "solid 2px #1c4485";
+        nota4.style.borderRadius = "12px";
+        nota4.style.width = "150px";
+        nota4.style.height = "25px";
+        nota4.style.margin = "auto";
+
+        nome.style.border = "solid 2px #1c4485";
+        nome.style.borderRadius = "12px";
+        nome.style.width = "190px";
+        nome.style.margin = "auto";
+
+        botao.style.width = "100px";
+        botao.style.height = "40px";
+        botao.style.fontSize = "16px";
+        botao.style.fontWeight = "600"
+        botao.style.backgroundColor = "#5b7db5";
+        botao.style.border = "solid 2px #1c4485";
+        botao.style.borderRadius = "4px";
+        botao.style.color = "#364f78";
+        botao.style.margin = "auto";
+
+        document.body.style.backgroundColor = "#8dbfc4"
+
+
+    function media(){
+
+      let nota1 = parseFloat(document.getElementById("nota1").value);
+      let nota2 = parseFloat(document.getElementById("nota2").value);
+      let nota3 = parseFloat(document.getElementById("nota3").value);
+      let nota4 = parseFloat(document.getElementById("nota4").value);
+      let nome = document.getElementById("nome");
+      let botao = document.querySelector(".botao");
+ 
+      let media = (nota1 + nota2 + nota3 + nota4)/4 ;
+
+        if (media >= 7) {
+        box.innerHTML = `<p> ${nome.value} você passou! :0 E sua média foi ${media} :) </p>`;
+
+        } else if (media > 4 && media < 7) {
+        box.innerHTML = `<p> ${nome.value} você está de exame, continue tentando :) sua média foi  ${media} </p>`;
+
+        } else {
+        box.innerHTML = `<p> ${nome.value} você não passou :( e sua média foi  ${media} </p>`;
+
+        }
+
+
+    }
+
+    </script>
+</body>
+</html>
